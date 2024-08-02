@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: cashfoleypipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cashfoleypipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: cashfoleypipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: cashfoleypipelinesjavascriptdocker 
+          image: cfregistry.azurecr.io/cashfoleypipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
